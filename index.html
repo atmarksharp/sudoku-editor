@@ -5,15 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
   <title>数独エディタ</title>
   
+  <!-- CSS -->
   <link rel="stylesheet" href="./bower_components/pure/pure-min.css">
   <link rel="stylesheet" href="./css/style.css">
-
-  <!--[if lt IE 9]>
-  <script src="bower_components/html5shiv/dist/html5shiv.min.js"></script>
-  <![endif]-->
-  <script src="./bower_components/jquery-legacy/dist/jquery.min.js"></script>
-  <script src="./js/script.js"></script>
-
 </head>
 <body>
   <header id="header">
@@ -25,12 +19,7 @@
       <article id="contents">
         <section id="editor">
           <img id="grid" src="./img/sudoku-grid-tp.png"></img>
-
-          <div id="cells">
-            <!-- <div class="cell x0 y0" data-pos="0"></div>
-            <div class="cell x1 y0" data-pos="1"></div>
-            <div class="cell x2 y0" data-pos="2"></div> -->
-          </div>
+          <div id="cell_container"></div>
         </section>
         <section id="buttons"></section>
       </article>
@@ -40,5 +29,15 @@
   <footer id="footer">
     
   </footer>
-</body3
-</html8
+
+  <!-- JavaScript -->
+
+  <!--[if lt IE 9]>
+  <script src="bower_components/html5shiv/dist/html5shiv.min.js"></script>
+  <![endif]-->
+  <script src="./bower_components/jquery-legacy/dist/jquery.min.js"></script>
+  <script src="./js/import.js"></script>
+  <script src="./js/script.js"></script>
+  <script type="text/javascript" src="./bower_components/retina.js/dist/retina.min.js"></script>
+</body>
+</html>
