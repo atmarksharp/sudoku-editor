@@ -14,6 +14,7 @@
       var n = i+1;
       preloadImage('img/number/b'+n+'.png');
       preloadImage('img/number/br'+n+'.png');
+      preloadImage('img/number/bb'+n+'.png');
     };
   }
 
