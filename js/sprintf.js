@@ -1,7 +1,7 @@
 (function(){
 
   window.sprintf = function(pattern, args){
-    return pattern.replace(/{([^{}]*)}/g,
+    return pattern.replace(/\#{([^{}]*)}/g,
       function (a, b) {
         var r = args[b];
         return typeof r === 'string' || typeof r === 'number' ? r : a;

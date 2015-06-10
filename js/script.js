@@ -1,11 +1,21 @@
 (function(){
 
   importJS('js/sprintf.js');
+  importJS('js/preload-image.js');
   importJS('js/sudoku-model.js');
 
   var $editor;
   var $selected = null;
   var resizeTimer = false;
+
+  // 画像などをプリロード
+  function preload(){
+    for (var i = 0; i < 9; i++) {
+      var n = i+1;
+      preloadImage('img/number/b'+n+'.png');
+      preloadImage('img/number/br'+n+'.png');
+    };
+  }
 
   function refresh(){
     var w = $editor.width();
@@ -17,9 +27,11 @@
     var $cell = $(cell);
     if($selected != null){
       $selected.removeClass('selected');
+      // $selected.html(''); // only for test
     }
 
     $selected = $cell;
+    $selected.html('<img src="img/number/b'+(x+1)+'.png" style="width:100%;height:100%;"/>');  // only for test
     $cell.addClass('selected');
   }
 
@@ -60,7 +72,7 @@
     // clickだとiPhoneで300ms遅延がある
     // see http://text.moroya.net/entry/2013/05/06/122013
     $editor.on('tap click', function(e){
-      
+
       // セルが背面にありクリックできないので、座標から探索
       e.preventDefault();
 
@@ -74,7 +86,7 @@
       var x = Math.floor(px / w_9);
       var y = Math.floor(py / w_9);
 
-      // printf("{x}, {y}", {x: x, y: y});
+      // printf("#{x}, #{y}", {x: x, y: y});
 
       var target = document.getElementById('c'+(x + y*9));
       cellClicked(target,x,y);
@@ -86,6 +98,7 @@
   // ===================
 
   jQuery(function($){
+    preload();
     initialize();
   });
 
