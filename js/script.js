@@ -1,14 +1,11 @@
 (function(){
 
   importJS('js/sprintf.js');
+  importJS('js/sudoku-model.js');
 
   var $editor;
   var $selected = null;
   var resizeTimer = false;
-
-  function millis(){
-    return new Date().getTime();
-  }
 
   function refresh(){
     var w = $editor.width();
@@ -62,18 +59,18 @@
 
     // clickだとiPhoneで300ms遅延がある
     // see http://text.moroya.net/entry/2013/05/06/122013
-    $editor.on('touchstart click', function(e){
-
+    $editor.on('tap click', function(e){
+      
       // セルが背面にありクリックできないので、座標から探索
-
       e.preventDefault();
 
-      var info = (e.type == 'touchstart')? e.originalEvent.touches[0] : e;
       var offset = $editor.offset();
       var w = $editor.width();
       var w_9 = w/9;
-      var px = info.pageX - offset.left;
-      var py = info.pageY - offset.top;
+      var pageX = (e.type === 'tap')? e.x : e.pageX;
+      var pageY = (e.type === 'tap')? e.y : e.pageY;
+      var px = pageX - offset.left;
+      var py = pageY - offset.top;
       var x = Math.floor(px / w_9);
       var y = Math.floor(py / w_9);
 
