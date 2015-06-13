@@ -4,6 +4,7 @@
 
   Event.$editor = null;
   Event.$selected = null;
+  var resizeTimer = false;
 
   // セルがクリックされたとき
   Event.cellClicked = function(cell,x,y){
@@ -20,7 +21,7 @@
 
   // 画面のリサイズが終了した時点で行う処理
   Event.windowResized = function(){ 
-    View.resizeEditor($editor);
+    View.resizeEditor(this.$editor);
   }
 
 
@@ -34,7 +35,7 @@
         clearTimeout(resizeTimer);
       }
       resizeTimer = setTimeout(function() {
-        windowResized();
+        Event.windowResized();
       }, 200);
     });
 

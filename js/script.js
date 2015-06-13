@@ -7,7 +7,6 @@
   importJS('js/event.js');
 
   var $editor = null;
-  var resizeTimer = false;
 
   // 初期化処理
   function initialize(){
