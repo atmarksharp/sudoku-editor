@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "states.js",
+  "sourceRoot": "..",
+  "sources": [
+    "coffee/states.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,EAAA,IAAC,CAAA,MAAD,GAAU;AAAA,IAAA,SAAA,EAAW,IAAX;GAAV,CAAA;;AACA,QAAA,CADA;AAAA"
+}

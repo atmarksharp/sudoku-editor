@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "import.js",
+  "sourceRoot": "..",
+  "sources": [
+    "coffee/import.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,EAAA,IAAC,CAAA,QAAD,GAAY,SAAC,IAAD,GAAA;AACV,IAAA,QAAQ,CAAC,KAAT,CAAe,sCAAA,GAAuC,IAAvC,GAA4C,aAA3D,CAAA,CADU;EAAA,CAAZ,CAAA;AAAA"
+}
