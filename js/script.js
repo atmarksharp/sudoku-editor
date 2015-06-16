@@ -3,7 +3,6 @@
   var initialize;
 
   (function() {
-    importJS('js/sprintf.js');
     importJS('js/preload-image.js');
     importJS('js/model.js');
     importJS('js/view.js');
@@ -18,7 +17,7 @@
     Event.initialize($editor);
   };
 
-  jQuery(function($) {
+  jQuery(function() {
     initialize();
   });
 

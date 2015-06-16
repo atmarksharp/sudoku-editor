@@ -12,12 +12,13 @@
 
   Event.cellClicked = function(cell, x, y) {
     var $cell;
+    console.log("x:" + x + ", y:" + y);
     $cell = $(cell);
     if (this.$selected !== null) {
       this.$selected.removeClass('selected');
     }
     this.$selected = $cell;
-    this.$selected.html('<img src="img/number/b' + x + 1 + '.png" style="width:100%;height:100%;"/>');
+    this.$selected.html('<img src="img/number/b' + (x + 1) + '.png" style="width:100%;height:100%;"/>');
     $cell.addClass('selected');
   };
 

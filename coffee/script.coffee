@@ -1,5 +1,4 @@
 do ->
-  importJS 'js/sprintf.js'
   importJS 'js/preload-image.js'
   importJS 'js/model.js'
   importJS 'js/view.js'
@@ -15,7 +14,7 @@ initialize = ->
   return
 
 # ===================
-jQuery ($) ->
+jQuery ->
   # View.preloadImages()
   initialize()
   return
