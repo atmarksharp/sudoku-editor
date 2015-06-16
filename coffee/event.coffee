@@ -1,5 +1,4 @@
 class Event
-  self = null
   @$editor = null
   @$selected = null
   @resizeTimer = false
@@ -24,7 +23,6 @@ class Event
 
   @initialize: ($editor) ->
     @$editor = $editor
-    self = Event
 
     # リサイズ処理
     # see http://www.webdesignleaves.com/wp/jquery/577/
@@ -39,6 +37,7 @@ class Event
 
     # clickだとiPhoneで300ms遅延がある
     # see http://text.moroya.net/entry/2013/05/06/122013
+    self = @
     $editor.on 'tap click', (e) ->
 
       # セルが背面にありクリックできないので、座標から探索

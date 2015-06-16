@@ -3,11 +3,7 @@
   var Event;
 
   Event = (function() {
-    var self;
-
     function Event() {}
-
-    self = null;
 
     Event.$editor = null;
 
@@ -31,8 +27,8 @@
     };
 
     Event.initialize = function($editor) {
+      var self;
       this.$editor = $editor;
-      self = Event;
       $(window).resize(function() {
         var resizeTimer;
         if (resizeTimer !== false) {
@@ -42,6 +38,7 @@
           self.windowResized();
         }), 200);
       });
+      self = this;
       $editor.on('tap click', function(e) {
         var offset, pageX, pageY, px, py, target, w, w_9, x, y;
         e.preventDefault();
