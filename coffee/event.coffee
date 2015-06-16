@@ -10,9 +10,7 @@ class Event
     $cell = $(cell)
     if @$selected != null
       @$selected.removeClass 'selected'
-      # $selected.html(''); // only for test
     @$selected = $cell
-    @$selected.html '<img src="img/number/b' + (x + 1) + '.png" style="width:100%;height:100%;"/>' # only for test
     $cell.addClass 'selected'
     return
 
