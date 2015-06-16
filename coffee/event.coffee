@@ -1,11 +1,12 @@
 class Event
+  self = null
   @$editor = null
   @$selected = null
   @resizeTimer = false
 
   # セルがクリックされたとき
   @cellClicked: (cell, x, y) ->
-    console.log "x:#{x}, y:#{y}"
+    # console.log "x:#{x}, y:#{y}"
 
     $cell = $(cell)
     if @$selected != null
@@ -23,6 +24,7 @@ class Event
 
   @initialize: ($editor) ->
     @$editor = $editor
+    self = Event
 
     # リサイズ処理
     # see http://www.webdesignleaves.com/wp/jquery/577/
@@ -30,7 +32,7 @@ class Event
       if resizeTimer != false
         clearTimeout resizeTimer
       resizeTimer = setTimeout((->
-        Event.windowResized()
+        self.windowResized()
         return
       ), 200)
       return
@@ -52,8 +54,8 @@ class Event
       y = Math.floor(py / w_9)
 
       # console.log("#{x}, #{y}")
-      target = document.getElementById('c' + x + y * 9)
-      Event.cellClicked target, x, y
+      target = document.getElementById("c#{x + y*9}")
+      self.cellClicked target, x, y
 
       # return false;
       return
